@@ -3,6 +3,7 @@ class StudentTablesController < ApplicationController
 	def index
 		@y=StudentTable.all
 	end
+
 	def create
 		x=StudentTable.new
 		x.name=params[:student_table][:name]
@@ -14,13 +15,15 @@ class StudentTablesController < ApplicationController
 		x.save
 		redirect_to student_table_url(id:x.id)
 	end
+
 	def new
 		@y=StudentTable.new
 	end
+
 	def edit
-	@y=StudentTable.find(params[:id])
-		
+		@y=StudentTable.find(params[:id])	
 	end
+
 	def update
 		@y=StudentTable.find(params[:id])
 		@y.name=params[:student_table][:name]
@@ -32,12 +35,15 @@ class StudentTablesController < ApplicationController
 		@y.save
 		redirect_to student_tables_url
 	end
+
 	def destroy
 		@y=StudentTable.find(params[:id])
 		@y.destroy
 		redirect_to student_tables_url
 	end
+
 	def show
 		@y=StudentTable.find(params[:id])
 	end
+	
 end
