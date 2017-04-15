@@ -1,0 +1,28 @@
+<table>
+	<tr>
+		<th> NAME </th>
+		<th> USN </th>
+		<th> SEMESTER </th>
+		<th> EMAIL_ID </th>
+		<th> PHONE_NUMBER </th>
+		<th> ADDRESS </th>
+	</tr>
+<% @y.each do |student| %>
+<td><%= student.name %></td>
+<td><%= student.usn%></td>
+<td><%= student.semester%></td>
+<td><%= student.email_id%></td>
+<td><%= student.phone_number%></td>
+<td><%= student.address%></td>
+<td>
+<%=link_to 'edit',edit_student_table_url(id:student.id) %>
+	</td>
+	<td><%=link_to 'delete',student_table_url(id:student.id),method:"delete" %>
+	</td>
+	<td><%=link_to 'show',student_table_url(id:student.id) %>
+	</td>
+</tr>
+	<% end %>
+	</table>
+
+	<%= link_to 'new page',new_student_table_url %>

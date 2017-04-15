@@ -1,0 +1,18 @@
+<%= form_for @y do |f| %>
+<p><%= f.label :name %>
+<%= f.text_field :name %></p>
+<p><%= f.label :usn %>
+<%= f.text_field :usn %></p>
+<p><%= f.label :semester %>
+<%= f.text_field :semester %></p>
+<p><%= f.label :email_id %>
+<%= f.text_field :email_id %></p>
+<p><%= f.label :phone_number %>
+<%= f.text_field :phone_number %></p>
+<p><%= f.label :address %>
+<%= f.text_area :address %></p>
+<p>
+    <%= f.submit "submit" %>
+  </p>
+
+<%end %>
